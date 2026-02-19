@@ -23,7 +23,6 @@
       --muted:rgba(243,246,255,.72);
       --shadow: 0 24px 80px rgba(0,0,0,.55);
       --radius: 24px;
-      --ok:#10b981;
     }
 
     body{
@@ -74,23 +73,28 @@
       flex-wrap:wrap;
     }
 
+    /* ✅ LOGO WSE (usa file wse.svg in root repo) */
     .logo-wse{
-  width:130px;
-  height:130px;
-  border-radius:22px;
-  background:#ffffff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 30px 70px rgba(0,0,0,.45);
-}
-
-.logo-wse img{
-  width:95px;
-  height:auto;
-  display:block;
-  object-fit:contain;
-}
+      width:130px;
+      height:130px;
+      border-radius:22px;
+      background:#ffffff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 30px 70px rgba(0,0,0,.45);
+      overflow:hidden;
+    }
+    .logo-wse .wse-logo{
+      width:108px; /* regola qui se lo vuoi più grande/piccolo */
+      height:auto;
+      display:block;
+    }
+    .logo-wse .wse-fallback{
+      display:none;
+      width:108px;
+      height:auto;
+    }
 
     .x{
       width:40px;height:40px;border-radius:999px;
@@ -452,12 +456,18 @@
     <section class="panel left">
       <div class="top-logos">
         <div class="logo-wse" aria-label="Wall Street English">
-          <!-- WSE logo SVG (inline) -->
-          <svg viewBox="0 0 226.772 172.913" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Wall Street English">
-            <defs><style>.cls-1{fill:#fff;}.cls-2{fill:#003359;}.cls-3{fill:#f12c3e;}</style></defs>
-            <polygon class="cls-1" points="0 0 0 172.913 226.772 172.913 226.772 0 0 0 0 0"/>
-            <path class="cls-2" d="M97.2365,44.4264c.0983-9.9635-4.8761-10.9982-9.9066-11.5712-3.5095-.4009-17.9472-.65-23.3282-.5923-3.6723.04-21.2086.1014-26.0843,2.1017-2.8421,1.1662-4.4365,3.604-5.13,6.9955-.4565,2.2314-.2839,4.9828-.3945,7.5494-.1128,2.6161.28,35.2549.2243,45.8486-.04,7.4039.0218,12.5839-.0992,20.2389a29.4852,29.4852,0,0,0,.74,7.197c.9991,3.516,4.1077,7.507,13.2215,7.6,5.2326.053,15.22.045,20.6747-.051.4912,4.676-.0359,11.932-3.0728,20.399-.2168.605-.444,1.214-.687,1.83l-.02.048c-.2883.666-.5993,1.299-.1431,1.813a1.0109,1.0109,0,0,0,1.2575.317,5.6915,5.6915,0,0,0,.714-.345l-.0406.028s.0281-.016.0681-.041a10.3107,10.3107,0,0,0,1.13-.755c3.3162-2.345,12.5411-10.329,14.9452-22.933,4.3849.028,8.65-.383,11.1549-2.123,3.6114-2.507,4.7695-6.094,4.7695-12.24,0-36.7624.0068-71.3146.0068-71.3146Z"/>
-            <path class="cls-3" d="M51.7593,127.478a56.7151,56.7151,0,0,1-6.513-.201c-2.976-.313-5.8253-1.767-7.2027-3.925-2.133-3.341-1.773-8.714-1.8757-13.94-.0974-5.043-.1746-49.0455-.1746-49.7327,0-1.9558.0338-4.9661.0646-7.05.0715-4.94-.5627-11.0375,1.861-14.0594A8.0348,8.0348,0,0,1,42.61,36.035c4.855-.8862,13.48-1.07,20.7556-1.1672,7.5637-.1014,19.045.596,21.5963.7547.6162.0384,1.8979.0741,1.8748.5038-.0246.4542-1.1438.58-1.6773.7039-2.1847.51-26.5118,5.6983-30.6376,7.1459-4.3682,1.5327-5.48,3.9551-5.8026,9.8223-.1948,3.5436-.5806,49.6936-.4825,53.1466.1084,3.813.345,6.29,2.68,8.304a22.87,22.87,0,0,0,4.18,2.794c2.9019,1.521,5.9782,3.21,7.7528,4.239.01.006.0211.013.0314.018.113.066.2191.128.3209.188a10.2128,10.2128,0,0,1,1.9041,1.509,5.179,5.179,0,0,1,1.3274,2.12,12.8121,12.8121,0,0,1,.3825,1.425c-3.9415.059-11.4573-.084-15.0561-.064Z"/>
+          <!-- ✅ Usa wse.svg nel repo (tutto minuscolo) -->
+          <img
+            src="./wse.svg?v=3"
+            alt="Wall Street English"
+            class="wse-logo"
+            onerror="this.style.display='none'; document.querySelector('.wse-fallback').style.display='block';"
+          />
+          <!-- Fallback (se wse.svg è corrotto o non carica) -->
+          <svg class="wse-fallback" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-label="WSE">
+            <rect width="64" height="64" rx="14" fill="#fff"/>
+            <path d="M18 44V20h8l6 10 6-10h8v24h-7V32l-7 12-7-12v12h-7z" fill="#003359"/>
+            <circle cx="48" cy="22" r="5" fill="#f12c3e"/>
           </svg>
         </div>
 
@@ -600,13 +610,11 @@
     const FORMSUBMIT_EMAIL = "catania@wallstreet.it";
     const ENDPOINT = `https://formsubmit.co/ajax/${encodeURIComponent(FORMSUBMIT_EMAIL)}`;
 
-    // ✅ Countdown: scadenza 31 marzo (ore 23:59:59 ora italiana)
-    // NOTA: uso "Europe/Rome" implicita lato utente. Imposto data locale: 31/03 ore 23:59:59
+    // ✅ Countdown: 31 marzo ore 23:59:59 (ora locale utente)
     const DEADLINE = (() => {
       const now = new Date();
       const year = now.getFullYear();
-      // mese 2 = marzo (0=gennaio)
-      return new Date(year, 2, 31, 23, 59, 59);
+      return new Date(year, 2, 31, 23, 59, 59); // 2 = marzo
     })();
 
     const elD = document.getElementById("cdD");
@@ -620,7 +628,7 @@
 
     function tickCountdown(){
       const now = new Date();
-      let diff = DEADLINE.getTime() - now.getTime();
+      const diff = DEADLINE.getTime() - now.getTime();
 
       if(diff <= 0){
         cdGrid.style.display = "none";
@@ -638,8 +646,6 @@
       elH.textContent = pad2(hours);
       elM.textContent = pad2(mins);
       elS.textContent = pad2(secs);
-
-      requestAnimationFrame(() => {});
     }
     tickCountdown();
     setInterval(tickCountdown, 1000);
@@ -651,14 +657,19 @@
     }
 
     function copyLink(){
-      navigator.clipboard?.writeText(window.location.href).then(() => {
-        alert("✓ Link copiato!");
-      }).catch(() => {
-        const ta=document.createElement("textarea");
-        ta.value=window.location.href; document.body.appendChild(ta);
-        ta.select(); document.execCommand("copy"); document.body.removeChild(ta);
-        alert("✓ Link copiato!");
-      });
+      const v = window.location.href;
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(v).then(() => alert("✓ Link copiato!")).catch(() => fallbackCopy(v));
+      } else {
+        fallbackCopy(v);
+      }
+    }
+
+    function fallbackCopy(v){
+      const ta=document.createElement("textarea");
+      ta.value=v; document.body.appendChild(ta);
+      ta.select(); document.execCommand("copy"); document.body.removeChild(ta);
+      alert("✓ Link copiato!");
     }
 
     const form = document.getElementById("leadForm");
@@ -668,7 +679,6 @@
 
     function isEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
 
-    // Pre-fill hidden landing url
     document.getElementById("landingUrl").value = window.location.href;
 
     form.addEventListener("submit", async (e) => {
@@ -693,7 +703,7 @@
 
       const fd = new FormData(form);
 
-      // Config FormSubmit (no captcha, template tabella)
+      // Config FormSubmit: no captcha, template tabella
       fd.append("_subject", "Nuovo lead — WSE Catania | Promo 3 mesi gratis (scade 31 marzo)");
       fd.append("_captcha", "false");
       fd.append("_template", "table");
