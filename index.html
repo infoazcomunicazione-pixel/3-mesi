@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -5,10 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Wall Street English Catania — 3 mesi gratis (fino al 31 marzo)</title>
-  <meta name="description" content="Attiva la promo: 3 mesi di corso Wall Street English GRATIS. Promo valida fino al 31 marzo. Compila il form e ti ricontatta la sede di Catania." />
+  <meta name="description" content="Attiva la promo: 3 mesi di corso Wall Street English GRATIS (su iscrizione minima 12 mesi). Promo valida fino al 31 marzo. Compila il form e ti ricontatta la sede di Catania." />
 
   <meta property="og:title" content="WSE Catania — 3 mesi gratis (fino al 31 marzo)" />
-  <meta property="og:description" content="Compila il form e attiva la promo: 3 mesi di corso GRATIS. Valida fino al 31 marzo." />
+  <meta property="og:description" content="Compila il form e attiva la promo: 3 mesi di corso GRATIS (su iscrizione minima 12 mesi). Valida fino al 31 marzo." />
 
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
@@ -17,7 +18,6 @@
       --wse-blue:#003359;
       --bg0:#070A0F;
       --bg1:#0B1020;
-      --glass: rgba(255,255,255,.08);
       --border: rgba(255,255,255,.14);
       --text:#F3F6FF;
       --muted:rgba(243,246,255,.72);
@@ -86,7 +86,7 @@
       overflow:hidden;
     }
     .logo-wse .wse-logo{
-      width:108px; /* regola qui se lo vuoi più grande/piccolo */
+      width:108px;
       height:auto;
       display:block;
     }
@@ -160,9 +160,26 @@
       color:var(--muted);
       font-size:15px;
       line-height:1.45;
-      max-width: 56ch;
-      margin-bottom:16px;
+      max-width: 60ch;
+      margin-bottom:14px;
     }
+
+    /* ✅ Nuova riga condizioni */
+    .terms{
+      color: rgba(243,246,255,.78);
+      font-size:12px;
+      line-height:1.35;
+      padding:10px 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.12);
+      display:inline-flex;
+      gap:8px;
+      align-items:flex-start;
+      max-width: 70ch;
+      margin-bottom:14px;
+    }
+    .terms b{color:#fff}
 
     .countdown{
       margin-top:6px;
@@ -185,9 +202,7 @@
       color: rgba(243,246,255,.88);
       display:flex; align-items:center; gap:8px;
     }
-    .cd-grid{
-      display:flex; gap:8px; align-items:stretch;
-    }
+    .cd-grid{ display:flex; gap:8px; align-items:stretch; }
     .cd-box{
       min-width:62px;
       padding:8px 10px;
@@ -211,12 +226,7 @@
       color: rgba(243,246,255,.70);
       margin-top:2px;
     }
-    .cd-done{
-      display:none;
-      font-size:12px;
-      font-weight:900;
-      color: rgba(243,246,255,.9);
-    }
+    .cd-done{ display:none; font-size:12px; font-weight:900; color: rgba(243,246,255,.9); }
 
     .cta-row{ display:flex; gap:12px; flex-wrap:wrap; margin-top:16px; }
     .btn{
@@ -224,7 +234,7 @@
       padding:14px 18px; font-weight:900;
       text-transform:uppercase; letter-spacing:.06em;
       font-size:12px;
-      transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+      transition: transform .12s ease, box-shadow .12s ease;
       display:inline-flex; align-items:center; justify-content:center; gap:10px;
       user-select:none; white-space:nowrap;
     }
@@ -335,9 +345,22 @@
       color: rgba(11,16,32,.72);
       font-size:13px;
       line-height:1.45;
-      margin-bottom:14px;
+      margin-bottom:10px;
       max-width: 60ch;
     }
+
+    /* ✅ Condizione anche nella colonna destra */
+    .right .cond{
+      font-size:12px;
+      line-height:1.35;
+      color: rgba(11,16,32,.72);
+      padding:10px 12px;
+      border-radius: 14px;
+      background: rgba(0,0,0,.05);
+      border: 1px solid rgba(0,0,0,.07);
+      margin-bottom:12px;
+    }
+    .right .cond b{color:#0b1020}
 
     .progress{
       height:8px;
@@ -456,14 +479,12 @@
     <section class="panel left">
       <div class="top-logos">
         <div class="logo-wse" aria-label="Wall Street English">
-          <!-- ✅ Usa wse.svg nel repo (tutto minuscolo) -->
           <img
-            src="./wse.svg?v=3"
+            src="./wse.svg?v=4"
             alt="Wall Street English"
             class="wse-logo"
             onerror="this.style.display='none'; document.querySelector('.wse-fallback').style.display='block';"
           />
-          <!-- Fallback (se wse.svg è corrotto o non carica) -->
           <svg class="wse-fallback" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-label="WSE">
             <rect width="64" height="64" rx="14" fill="#fff"/>
             <path d="M18 44V20h8l6 10 6-10h8v24h-7V32l-7 12-7-12v12h-7z" fill="#003359"/>
@@ -490,6 +511,12 @@
       <div class="sub">
         Attiva la promo <b>3 mesi di corso Wall Street English GRATIS</b> con la sede di <b>Catania</b>.
         Compila il form: ti richiamiamo per finalizzare l’iscrizione e sbloccare l’offerta <b>entro il 31 marzo</b>.
+      </div>
+
+      <!-- ✅ CONDIZIONE PROMO -->
+      <div class="terms" role="note" aria-label="Condizione promo">
+        <span>ℹ️</span>
+        <span>Promo valida su <b>iscrizione a un corso di almeno 12 mesi</b>.</span>
       </div>
 
       <div class="countdown" aria-label="Countdown scadenza promo">
@@ -551,6 +578,11 @@
         <b>Scade il 31 marzo</b>.
       </p>
 
+      <!-- ✅ CONDIZIONE PROMO (anche qui) -->
+      <div class="cond" role="note">
+        ℹ️ Promo valida su <b>iscrizione a un corso di almeno 12 mesi</b>.
+      </div>
+
       <div class="progress" aria-hidden="true"><span></span></div>
 
       <form id="leadForm" novalidate>
@@ -577,7 +609,8 @@
 
         <!-- Hidden tracking -->
         <input type="hidden" name="Sede" value="Wall Street English Catania" />
-        <input type="hidden" name="Promo" value="3 mesi di corso GRATIS (valida fino al 31 marzo)" />
+        <input type="hidden" name="Condizione" value="Promo valida su iscrizione a un corso di almeno 12 mesi" />
+        <input type="hidden" name="Promo" value="3 mesi di corso GRATIS (valida fino al 31 marzo) — su iscrizione minima 12 mesi" />
         <input type="hidden" name="Data_Invio" id="timestamp" value="" />
         <input type="hidden" name="Landing" id="landingUrl" value="" />
 
@@ -652,7 +685,7 @@
 
     function shareWA(){
       const url = window.location.href;
-      const text = encodeURIComponent("🔥 WSE Catania: 3 mesi di corso GRATIS (valida fino al 31 marzo). Attiva qui: " + url);
+      const text = encodeURIComponent("🔥 WSE Catania: 3 mesi di corso GRATIS (valida fino al 31 marzo). Promo su iscrizione minima 12 mesi. Attiva qui: " + url);
       window.open("https://wa.me/?text=" + text, "_blank");
     }
 
@@ -704,7 +737,7 @@
       const fd = new FormData(form);
 
       // Config FormSubmit: no captcha, template tabella
-      fd.append("_subject", "Nuovo lead — WSE Catania | Promo 3 mesi gratis (scade 31 marzo)");
+      fd.append("_subject", "Nuovo lead — WSE Catania | Promo 3 mesi gratis (scade 31 marzo) | Minimo 12 mesi");
       fd.append("_captcha", "false");
       fd.append("_template", "table");
 
@@ -735,3 +768,4 @@
   </script>
 </body>
 </html>
+```
